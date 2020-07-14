@@ -18,7 +18,8 @@ db.once("open", () => {
     console.log("Connected to mongod server");
 });
 
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true });
+const MONGODB_URL = "mongodb+srv://root:by606700@cluster0.5dipt.mongodb.net/mydb?retryWrites=true&w=majority";
+mongoose.connect(MONGODB_URL, { useNewUrlParser: true });
 //
 dotenv.config();
 
