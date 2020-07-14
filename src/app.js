@@ -2,11 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import path from "path";
+import helmet from "helmet";
+import dotenv from "dotenv";
 
 import pageRouter from "./routes/page";
 import boardRouter from "./routes/board";
 import commentRouter from "./routes/comment";
-import helmet from "helmet";
 
 const app = express();
 
@@ -20,6 +21,8 @@ db.once("open", () => {
 
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true });
 //
+dotenv.config();
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
@@ -35,7 +38,7 @@ app.use("/board", boardRouter);
 app.use("/comment", commentRouter);
 app.use("/", pageRouter);
 
-const port = 3000;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
-    console.log("server is Running on http://localhost:" + port);
+    console.log("server is Running on port " + port);
 });
