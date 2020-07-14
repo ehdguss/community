@@ -1,0 +1,49 @@
+head
+    link(rel="stylesheet", href="css/index.css")
+
+include partials/header.pug
+
+.contents
+    .contents_container
+        .menuBox
+            .menuBox_container
+                .write_btn
+                    a(href="write")
+                        div 글쓰기
+                form(action="" class="search_form")
+                    select(name="type")
+                        option(vlaue="제목+내용") 제목+내용
+                        option(vlaue="제목") 제목
+                        option(vlaue="글") 작성자
+                        option(value="내용") 내용
+
+                    input(type="text" placeholder="검색")
+                    input(type="submit" value="검색")
+
+        .main_contents
+            .main_contents_container
+                table
+                    thead
+                        tr
+                            th 제목
+                            th 작성자
+                            th 조회수
+                            th 작성일
+                    tbody
+                        if (board !== null)
+                            - for(let i=0; i<board.length; i++)
+                                tr
+                                    td 
+                                        a(href=`/board/${board[i]._id}`)
+                                            div #{board[i].title}
+                                    td
+                                        a(href=`/profile/user/${board[i]._id}`)
+                                            //- div #{board[i].author}
+                                            div test
+                                    td
+                                        div #{board[i].views}
+                                    td
+                                        - const time = new Date(board[i].date);
+                                        - const hour = time.getHours();
+                                        - const minute = time.getMinutes();
+                                        div #{`${hour < 10 ? `0${hour}` : `${hour}`}:${minute < 10 ? `0${minute}` : `${minute}`}`}

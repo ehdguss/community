@@ -1,0 +1,180 @@
+@import "reset.css";
+
+.contents {
+    width: 735px;
+    height: 90%;
+    margin: 0 auto;
+    padding: 10px 10px;
+}
+
+.contents_container {
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin: 5px;
+}
+
+.writeInfoBox {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.profileArea {
+    display: flex;
+}
+
+.profile div {
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+
+.userInfo {
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+.writeInfo {
+    display: flex;
+    font-size: 12px;
+    color: #979797;
+}
+
+.views {
+    margin-left: 5px;
+}
+
+.menuBox {
+    display: flex;
+    font-size: 14px;
+    margin-left: auto;
+}
+.menuBox input, a{
+    all: unset;
+    cursor: pointer;
+    border-bottom: 1px solid #b6b6b6;
+    padding: 5px 0;
+    margin-right: 10px;
+}
+
+.main_contents {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.board {
+    min-height: 500px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+.board p {
+    overflow-wrap: break-word;
+}
+
+.commentBox {
+    padding-top: 10px;
+}
+
+.commentEnterArea form {
+    border: 1px solid lightgray;
+    margin-top: 10px;
+}
+
+.commentInput {
+    width: 670px;
+    padding: 10px;
+    font-size: 15px;
+    overflow-wrap: break-word;
+    min-height: 40px;
+    max-height: 100px;
+}
+.commentInput::placeholder {
+    font-size: 15px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.photoUpload div {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    background-color: #eff0f2;
+}
+
+.navigation input {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    width: 40px;
+    margin-left: auto;
+    padding: 5px;
+    border: 1px solid #b6b6b6;
+    background-color: #eff0f2;
+}
+
+.commentShowArea {
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.comment {
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.comment_area {
+    display: flex;
+}
+
+.comment_profile {
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    background-color: #d3d3d3;
+}
+
+.comment_box {
+    font-size: 15px;
+}
+
+.comment_author {
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+
+.comment_text {
+    padding-bottom: 3px;
+}
+
+.comment_info {
+    color: #979797;
+    font-size: 13px;
+}
+
+.comment_menuBox {
+    margin-left: auto;
+    margin-top: 30px;
+    font-size: 13px;
+    border-bottom: 1px solid #979797;
+}
+
+.comment_menuBox input {
+    all: unset;
+    cursor: pointer;
+}

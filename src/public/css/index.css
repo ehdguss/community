@@ -1,0 +1,92 @@
+@import "reset.css";
+
+.contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents_container {
+    width: 735px;
+    min-height: 85vh;
+    margin-top: 40px;
+    padding: 10px 20px;
+    border: 4px solid #eeeeee;
+}
+
+.menuBox_container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.write_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 65px;
+    height: 11px;
+    padding: 10px 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: #065093;
+}
+.write_btn a {
+    color: white;
+}
+
+.search_form {
+    margin-left: auto;
+}
+
+.main_contents_container {
+    margin-top: 10px;
+}
+/*  */
+table {
+    width: 100%;
+}
+
+thead {
+    border-bottom: 3px double #065093;
+    border-top: 2px solid #065093;
+}
+
+th {
+    padding: 8px 0;
+    font-weight: 600;
+}
+th:nth-child(1) {
+    width: 50%;
+}
+th:nth-child(2) {
+    width: 30%;
+}
+th:nth-child(3) {
+    width: 10%;
+}
+th:nth-child(4) {
+    width: 10%;
+}
+
+tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+
+td {
+    padding: 10px 5px;
+}
+td:nth-child(1) {
+    text-align: left;
+}
+td:nth-child(2) {
+    text-align: center;
+}
+td:nth-child(3) {
+    text-align: center;
+}
+td:nth-child(4) {
+    text-align: center;
+}

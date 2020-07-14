@@ -1,0 +1,44 @@
+.header_container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: #065093;
+    color: white;
+}
+
+.header_menubar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.header_menubar div {
+    background-color: white;
+    margin-bottom: 3px;
+    width: 20px;
+    height: 2px;
+}
+
+.header_logo a h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.header_menus {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.header_menus button {
+    background-color: #1c79cf;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 5px 10px;
+}
+

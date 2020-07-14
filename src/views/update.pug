@@ -1,0 +1,21 @@
+head
+    link(rel="stylesheet", href="../../css/write.css")
+
+include partials/header.pug
+    
+.contents
+    .contents_container
+        .writeArea
+            form(action="/board/update" method="post" onsubmit="return confirm('게시글을 저장하시겠습니까?')")
+                .write_title
+                    p 제목
+                    input(type="text" name="title" value=`${board.title}` placeholder="제목을 입력하세요")
+                .write_attachFile
+                    div 파일(미완성)
+                .write_board
+                    textarea(name="contents") #{board.contents}
+                input(type="hidden" name="id" value=`${board.id}`)
+                input(type="submit" value="확인")
+
+
+script(src="/static/controll.js")

@@ -1,0 +1,75 @@
+head
+    link(rel="stylesheet", href="../css/board.css")
+
+include partials/header.pug
+
+.contents
+    .contents_container
+        .writeInfoBox
+            .writeInfoBox_container
+                .title #{board.title}
+
+                .profileArea
+                    .profile
+                        div
+                    .infoBox
+                        .userInfo
+                            .author user
+                            //- #{board.author}
+                        .writeInfo
+                            .date
+                                - const time = new Date(board.date);
+                                - const year = time.getFullYear();
+                                - const month = time.getMonth();
+                                - const date = time.getDate();
+                                - const hour = time.getHours();
+                                - const minute = time.getMinutes();
+                                div #{ `${year}.${month < 10 ? `0${month}` : `${month}`}.${date < 10 ? `0${date}` : `${date}`} ${hour < 10 ? `0${hour}` : `${hour}`}:${minute < 10 ? `0${minute}` : `${minute}`}` }
+                            .views 조회 #{board.views}
+            .menuBox
+                form(action="/board/delete" method="post" class="board_deleteBtn" onsubmit="return confirm('게시글을 삭제하시겠습니까?')")
+                    input(type="hidden" name="id" value=`${board.id}`)
+                    input(type="submit" value="삭제")
+                a(href=`/board/update/${board.id}`)
+                    div 수정
+
+        .main_contents
+            .board
+                p #{board.contents}
+
+        .commentBox
+            .commentBox_container
+                .commentEnterArea
+                    div 댓글 ( #{board.comments.length} )
+                    form(action="/comment/write" method="post" class="commentForm")
+                        input(type="text" name="id" value=`${board.id}` hidden="")
+                        <textarea name="contents" placeholder="댓글을 남겨보세요" name="contents" class="commentInput"></textarea>
+                        br
+                        .navigation
+                            .photoUpload
+                                div x
+                            input(type="submit" value="등록")
+                    
+                .commentShowArea
+                    .comments
+                        - if(board.comments != null)
+                            - const comment = board.comments;
+                            - for(let i=0; i<board.comments.length; i++)
+                                .comment
+                                    .comment_area
+                                        .comment_profile
+                                        .comment_box
+                                            .comment_author #{comment[i].author}
+                                            .comment_text #{comment[i].contents}
+                                            - const time = new Date(board.comments[i].comment_date);
+                                            - const year = time.getFullYear();
+                                            - const month = time.getMonth();
+                                            - const date = time.getDate();
+                                            - const hour = time.getHours();
+                                            - const minute = time.getMinutes();
+                                            .comment_info #{`${year}.${month < 10 ? `0${month}` : `${month}`}.${date < 10 ? `0${date}` : `${date}`} ${hour < 10 ? `0${hour}` : `${hour}`}:${minute < 10 ? `0${minute}` : `${minute}`}`}
+                                        .comment_menuBox
+                                            form(action="/comment/delete" method="post" onsubmit="return confirm('댓글을 삭제하시겠습니까?')")
+                                                input(type="hidden" name="board_id" value=`${board.id}`)
+                                                input(type="hidden" name="comment_id" value=`${comment[i].id}`)
+                                                input(type="submit" value="삭제")
